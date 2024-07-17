@@ -29,15 +29,15 @@ describe('Website', () => {
   });
   it('checks if the user can get to the check out page with the correct price', () => {
     // Click on a product
-    cy.get(shopPage.ancestryButton).click();
+    shopPage.ancestryButton.click();
     // In the "In this order" page verify that the item price is correct 
-    cy.get(inThisOrderPage.price).should('contain', price);
+    inThisOrderPage.price.should('contain', price);
     // In the same page the Total is also the correct price
-    cy.get(inThisOrderPage.total).should('contain', price);
+    inThisOrderPage.total.should('contain', price);
     // Click on the checkout button
-    cy.get(inThisOrderPage.checkOutButton).click();
+    inThisOrderPage.checkOutButton.click();
     // In the Order Sumary page, the price is correct
-    cy.get(orderSummaryPage.price).should('contain', price); 
+    orderSummaryPage.price.should('contain', price); 
   });
 
 });
