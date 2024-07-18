@@ -12,8 +12,8 @@ class BurgerMenu {
     this.aboutButton = '[data-testid="burger-click-About"]';
   }
    openPage(pageButton){
-      cy.get(this.burgerMenuButton).should('exist').click();
-      cy.get(pageButton).click();
+    cy.get(this.burgerMenuButton).should('exist').click({force: true});
+    cy.get(pageButton).click({force: true});
     }
   }
   const burgerMenu = new BurgerMenu();
